@@ -10,4 +10,4 @@ wheels/
 .venv
 
 # .gitignore
-data/flights.csv
+data/flights.csv.DS_Store
