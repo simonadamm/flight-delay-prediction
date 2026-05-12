@@ -25,22 +25,40 @@ The project follows these steps:
 2.  **Feature Engineering:** New features were created, including `IS_WEEKEND` and cyclical time representations (`SIN`/`COS`), to improve model performance.
 3.  **Exploratory Data Analysis (EDA):** Data was visualized to uncover patterns, such as the increase in delays during summer months and in the evening.
 4.  **Predictive Modeling:** Two models were trained:
-    *   **Logistic Regression:** A baseline model that achieved a ROC AUC of ~0.68.
+    *   **Logistic Regression:** A baseline model that achieved a ROC AUC of ~0.64.
     *   **LightGBM:** A gradient boosting model that significantly outperformed the baseline with a ROC AUC of ~0.73.
 5.  **Conclusion:** The LightGBM model was identified as the more effective solution for predicting flight delays.
+
+## Model Performance
+
+| Model | Accuracy | Precision Delayed | Recall Delayed | F1 Delayed | ROC AUC |
+|---|---:|---:|---:|---:|---:|
+| Logistic Regression | 0.58 | 0.25 | 0.64 | 0.36 | 0.640 |
+| LightGBM | 0.67 | 0.31 | 0.67 | 0.43 | 0.730 |
 
 ## Data
 Data source: https://www.kaggle.com/datasets/usdot/flight-delays
 
 ## How to Run
 
-1.  Clone the repository.
-2.  Install the required libraries:
-    ```bash
-    pip install pandas numpy matplotlib seaborn scikit-learn lightgbm plotly
-    ```
-3.  Open and run the `notebooks/flight_delay_prediction.ipynb` notebook to see the full analysis and model training process.
-4.  To generate the map, run the Python script provided in the section below.
+1. Clone the repository:
+
+```bash
+git clone https://github.com/simonadamm/flight-delay-prediction.git
+cd flight-delay-prediction
+```
+
+2. Install all required dependencies:
+
+```bash
+uv sync
+```
+
+3. Activate the virtual environment:
+
+```bash
+source .venv/bin/activate
+```
 
 ## Technologies Used
 - Python
